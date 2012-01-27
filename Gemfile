@@ -1,13 +1,13 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.2.0'
+gem 'rails', '3.0.0'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'sqlite3-ruby', :require => 'sqlite3'
 
-gem "devise"
+gem "devise", "1.1.rc2"
 gem "awesome_print", "0.2.1"
 gem "ruby-prof"
 
@@ -29,7 +29,7 @@ gem "ruby-prof"
 # Bundle gems for certain environments:
  gem 'rspec', :group => :test
  group :test, :development do
-   gem 'rspec-rails'
+   gem 'rspec-rails', '2.3.0'
  end
 
 # group :test do
@@ -39,7 +39,7 @@ gem "ruby-prof"
 group :test do
   gem 'capybara'
   gem 'database_cleaner'
-  gem 'cucumber'
+  gem 'cucumber', '>0.9.0'
   gem 'cucumber-rails'
 end
 
