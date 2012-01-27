@@ -1,0 +1,27 @@
+#START:project_user_view
+<h2>Users for <%= @project.name %></h2>
+
+<table border="0" width="">
+  <% @project.users.each do |user| %>
+    <tr>
+      <td><%= user.login %></td>
+      <td><%= user.email %></td>
+    </tr>
+  <% end %>
+</table>
+#END:project_user_view
+
+#START:project_status_view
+<h2>Status Reports for <%= @project.name %></h2>
+<% @reports.keys.sort.each do |date| %>
+  <div id="<%= date.to_s(:db) %>_day">
+    <h3>Reports for <%= date.to_s(:long) %></h3>
+    <% @reports[date].each do |report| %>
+      <div id="<%= dom_id(report) %>">
+        Yesterday I: <%= report.yesterday %>
+        Today I will: <%= report.today %>
+      </div>
+    <% end %>
+  </div>
+<% end %>
+#END:project_status_view

@@ -1,0 +1,12 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+
+two:
+  name: MyString
+  
+#START:huddle_yaml
+huddle:
+  name: Huddle Project
+#END:huddle_yaml

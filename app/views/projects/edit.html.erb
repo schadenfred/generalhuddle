@@ -1,0 +1,27 @@
+<h1>Editing project</h1>
+
+<%= render 'form' %>
+
+#START:users_in_project
+  <h2>Users In Project</h2>
+  <table>
+    <% User.all.each do |user| %>
+      <tr>
+        <td>
+          <%= check_box_tag "users_in_project[]", user.id, 
+              user.projects.exists?(@project.id),
+              :id => dom_id(user, :checkbox) %>     
+        </td>
+        <td>
+          <label for="<%= dom_id(user, :checkbox) %>">
+            <%= user.login %>
+          </label>
+        </td>
+      </tr>
+
+    <% end %>
+  </table>
+#END:users_in_project
+
+<%= link_to 'Show', @project %> |
+<%= link_to 'Back', projects_path %>
